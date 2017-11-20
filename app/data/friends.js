@@ -1,13 +1,19 @@
 //ARRAY OF OBJECTS
-var freunden = [
+var Freunden = [
   {
     name:
     photo:
-    scores:
+    scores: [
+
+    ]
   },
   {
     name:
     photo:
-    scores:
+    scores: [
+
+    ]
   }
 ]
+
+module.exports = Freunden;
