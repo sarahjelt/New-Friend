@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <style>
+    a {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Survey Questions</h2>
+    <hr>
+    <h3>About You</h3>
+    <form>
+      <label for>Name (Required)</label>
+      <br>
+      <input id="name" type="text" class="form-control" placeholder="Name"></input>
+      <br>
+      <label for>Link to Photo (Required)</label>
+      <br>
+      <input id="photo" type="text" class="form-control" placeholder="http://..."></input>
+    </form>
+    <hr>
+    <h3>Question One</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Two</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Three</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Four</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Five</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Six</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Seven</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Eight</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Nine</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+    <h3>Question Ten</h3>
+      <h4>Sample text</h4>
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="q10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a data-value="1">1 – Strongly Disagree</a></li>
+          <li><a data-value="2">2</a></li>
+          <li><a data-value="3">3 – Staunchly Ambivalent</a></li>
+          <li><a data-value="4">4</a></li>
+          <li><a data-value="5">5 – Strongly Agree</a></li>
+        </ul>
+      </div>
+  <br>
+  <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+  <hr>
+  <p><a href="/api/friends">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
+  </div>
+
+  <script type="text/javascript">
+  // make text of dropdown button change to whichever item is selected
+  $(".dropdown-menu li a").click(function(){
+    $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
+    $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
+  });
+
+  //validate whether form is complete
+
+    //onclick event for submit button
+    $("#submit-button").on("click", function(event) {
+      event.preventDefault();
+
+      var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [$("#q1").attr("value"), $("#q2").attr("value"), $("#q3").attr("value"), $("#q4").attr("value"), $("#q5").attr("value"), $("#q6").attr("value"), $("#q7").attr("value"), $("#q8").attr("value"), $("#q9").attr("value"), $("#q10").attr("value")]
+      }
+      var currentURL = window.location.origin;
+
+      $.post(currentURL + "/api/friends", newFriend, function(data) {
+        console.log(data);
+        alert("Adding character...");
+      });
+    });
+
+  </script>
+</body>
+</html>

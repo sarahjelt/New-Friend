@@ -1,16 +1,18 @@
 var express = require("express");
-var friends = require("../data/friends.js")
-var Freunden = new friends();
+var friends = require("../data/friends.js").Freunden;
 var app = express();
 
-app.get("/api/friends", function(req, res) {
-//GET route
-});
+module.exports = function(app) {
 
+  app.get("/api/friends", function(req, res) {
+    return res.json(friends);
+  });
 
-//need POST route
-app.post("/api/friends", function(req, res) {
-  var newFriend = req.body;
-  //some other stuff
-  Freunden.push(newFriend);
-});
+  app.post("/api/friends", function(req, res) {
+    var newFriend = req.body;
+    console.log(newFriend);
+    friends.push(newFriend);
+    res.json(newFriend);
+  });
+
+};
