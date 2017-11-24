@@ -28,7 +28,8 @@
     </form>
     <hr>
     <h3>Question One</h3>
-      <h4>Sample text</h4>
+      <h4>I enjoy long walks on the beach and discussing literature by the fire.
+</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -40,7 +41,7 @@
         </ul>
       </div>
     <h3>Question Two</h3>
-      <h4>Sample text</h4>
+      <h4>Music is a part of my everyday existence.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -52,7 +53,7 @@
         </ul>
       </div>
     <h3>Question Three</h3>
-      <h4>Sample text</h4>
+      <h4>Bad movies can be as enjoyable to watch as good movies.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -64,7 +65,7 @@
         </ul>
       </div>
     <h3>Question Four</h3>
-      <h4>Sample text</h4>
+      <h4>Gummi bears are better than popcorn.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -76,7 +77,7 @@
         </ul>
       </div>
     <h3>Question Five</h3>
-      <h4>Sample text</h4>
+      <h4>Radiohead is a good band.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -88,7 +89,7 @@
         </ul>
       </div>
     <h3>Question Six</h3>
-      <h4>Sample text</h4>
+      <h4>I'd rather not discuss politics.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -100,7 +101,7 @@
         </ul>
       </div>
     <h3>Question Seven</h3>
-      <h4>Sample text</h4>
+      <h4>Driving a car is a dangerous and frightening prospect.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -112,7 +113,7 @@
         </ul>
       </div>
     <h3>Question Eight</h3>
-      <h4>Sample text</h4>
+      <h4>Dogs are better than cats because cats aren't affectionate enough.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -124,7 +125,7 @@
         </ul>
       </div>
     <h3>Question Nine</h3>
-      <h4>Sample text</h4>
+      <h4>Empire Strikes Back is the worst of the original Star Wars movies because it's the most boring.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -136,7 +137,7 @@
         </ul>
       </div>
     <h3>Question Ten</h3>
-      <h4>Sample text</h4>
+      <h4>I should be allowed to blurt the merest idea if, by random whim, one occurs to me.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -151,6 +152,24 @@
   <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
   <hr>
   <p><a href="/api/friends">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
+  
+  </div>
+
+  <!-- modal -->
+  <div id="resultsModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <h2 class="modal-title">Best Match</h2>
+      </div>
+      <div class="modal-body">
+        <h2 id="matchName"></h2>
+        <img id="matchImg" src="" alt="">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
 
   <script type="text/javascript">
@@ -171,11 +190,16 @@
         photo: $("#photo").val().trim(),
         scores: [$("#q1").attr("value"), $("#q2").attr("value"), $("#q3").attr("value"), $("#q4").attr("value"), $("#q5").attr("value"), $("#q6").attr("value"), $("#q7").attr("value"), $("#q8").attr("value"), $("#q9").attr("value"), $("#q10").attr("value")]
       }
-      var currentURL = window.location.origin;
 
-      $.post(currentURL + "/api/friends", newFriend, function(data) {
+      // var currentURL = window.location.origin;
+
+      // posts answers to server and modal pops up, apiRoutes post handles match logic
+      $.post("/api/friends", newFriend, function(data) {
+        $("#matchName").text(data.name);
+        $("#matchImg").attr("src", data.photo);
+        $("#resultsModal").modal("toggle");
         console.log(data);
-        alert("Adding character...");
+        alert("Adding friend...");
       });
     });
 

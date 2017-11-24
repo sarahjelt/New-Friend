@@ -5,13 +5,16 @@ var path = require("path");
 
 //EXPRESS
 var app = express();
-var routes = require('./app/routing/htmlRoutes.js')(app);
-var api = require('./app/routing/apiRoutes.js')(app);
 
 var PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+
+var routes = require('./app/routing/htmlRoutes.js')(app);
+var api = require('./app/routing/apiRoutes.js')(app);
+
+
 
 //DATA
 
