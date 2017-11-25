@@ -9,6 +9,9 @@
     a {
       cursor: pointer;
     }
+    img {
+      max-height: 75%;
+    }
   </style>
 </head>
 
@@ -28,8 +31,7 @@
     </form>
     <hr>
     <h3>Question One</h3>
-      <h4>I enjoy long walks on the beach and discussing literature by the fire.
-</h4>
+      <h4>I enjoy long walks on the beach and discussing literature by the fire.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -152,9 +154,7 @@
   <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
   <hr>
   <p><a href="/api/friends">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
-  
   </div>
-
   <!-- modal -->
   <div id="resultsModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -179,7 +179,9 @@
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
   });
 
+// ===================================
   //validate whether form is complete
+// ===================================
 
     //onclick event for submit button
     $("#submit-button").on("click", function(event) {
@@ -191,15 +193,12 @@
         scores: [$("#q1").attr("value"), $("#q2").attr("value"), $("#q3").attr("value"), $("#q4").attr("value"), $("#q5").attr("value"), $("#q6").attr("value"), $("#q7").attr("value"), $("#q8").attr("value"), $("#q9").attr("value"), $("#q10").attr("value")]
       }
 
-      // var currentURL = window.location.origin;
-
       // posts answers to server and modal pops up, apiRoutes post handles match logic
       $.post("/api/friends", newFriend, function(data) {
         $("#matchName").text(data.name);
         $("#matchImg").attr("src", data.photo);
         $("#resultsModal").modal("toggle");
         console.log(data);
-        alert("Adding friend...");
       });
     });
 

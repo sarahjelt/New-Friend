@@ -18,7 +18,37 @@ module.exports = function(app) {
     var newFriend = req.body;
       console.log(newFriend);
       friends.push(newFriend);
-      res.json(newFriend);
+      // res.json(newFriend);
+
+      console.log(newFriend.scores);
+
+      //match algorithm
+      var nooFriend = newFriend.scores.map(Number);
+      var totals = [];
+
+        for (var i = 0; i < friends.length; i++) {
+          var oldFriends = friends[i].scores;
+          var difference = [];
+
+          for (var j = 0; j < nooFriend.length; j++) {
+            difference.push(Math.abs(nooFriend[j] - oldFriends[j]));
+          }
+
+        console.log(difference);
+        var totalDifference = difference.reduce((a, b) => a + b, 0);
+        totals.push(totalDifference);
+        };
+
+      totals.pop();
+      console.log(totals);
+
+      var match = totals.indexOf(totals.reduce((a, b) => Math.min(a, b)));
+      console.log(match);
+
+      var BFF = friends[match].name;
+      var BFFimg = friends[match].photo;
+      console.log(`${BFF} is your match!`);
+      res.json(friends[match]);
     })
   };
 
