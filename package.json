@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "method-override": "^2.3.10"
   },
   "devDependencies": {},
   "scripts": {

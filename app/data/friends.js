@@ -1,8 +1,8 @@
 //ARRAY OF OBJECTS
 var Freunden = [
   {
-    name: "joeschmo",
-    photo: "http://style.anu.edu.au/_anu/4/images/placeholders/person.png",
+    name: "charlie",
+    photo: "http://24.media.tumblr.com/tumblr_krvp8epmQ71qzpxm3o1_400.jpg",
     scores: [
       "1",
       "3",

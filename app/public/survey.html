@@ -5,13 +5,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <style>
+  <style type="text/css">
+
+    body {
+      background-color: #a3a3c2;
+    }
+
+    h2 {
+      color: #e0e0eb;
+    }
+
     a {
+      color: white;
       cursor: pointer;
     }
-    img {
-      max-height: 75%;
+
+    #submit-button {
+      background-color: #adebeb;
+      border-color: #adebeb;
+      color: #333;
     }
+
+    #matchImg {
+      max-height: 75%;
+      max-width: 75%;
+    }
+
   </style>
 </head>
 
@@ -27,7 +46,7 @@
       <br>
       <label for>Link to Photo (Required)</label>
       <br>
-      <input id="photo" type="text" class="form-control" placeholder="http://..."></input>
+      <input id="photo" type="text" class="form-control" placeholder="https://..."></input>
     </form>
     <hr>
     <h3>Question One</h3>
@@ -153,39 +172,72 @@
   <br>
   <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
   <hr>
-  <p><a href="/api/friends">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
+  <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder" target="_blank">GitHub Repo</a></p>
   </div>
-  <!-- modal -->
-  <div id="resultsModal" class="modal fade" role="dialog">
+  <!-- results modal -->
+  <div id="resultsModal" class="modal fade" role="dialog" style="display: none;">
     <div class="modal-dialog">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">x</button>
-        <h2 class="modal-title">Best Match</h2>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h2 class="modal-title">Best Match</h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="matchName"></h2>
+          <img id="matchImg" src="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
-      <div class="modal-body">
-        <h2 id="matchName"></h2>
-        <img id="matchImg" src="" alt="">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+  <!-- warning modal-->
+  <div id="warningModal" class="modal fade" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">x</button>
+          <h2 class="modal-title">Warning!</h2>
+        </div>
+        <div class="modal-body">
+          <h3>Please fill out all fields and answer all questions before submitting!</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
 
   <script type="text/javascript">
-  // make text of dropdown button change to whichever item is selected
+
+  // makes text of dropdown button change to whichever item is selected
   $(".dropdown-menu li a").click(function(){
     $(this).parents(".dropdown").find('.btn').html($(this).text() + ' <span class="caret"></span>');
     $(this).parents(".dropdown").find('.btn').val($(this).data('value'));
   });
 
-// ===================================
-  //validate whether form is complete
-// ===================================
+  //onclick event for submit button
+  $("#submit-button").on("click", function(event) {
 
-    //onclick event for submit button
-    $("#submit-button").on("click", function(event) {
-      event.preventDefault();
+    //validate whether form is complete
+    function validateForm() {
+      var isValid = true;
+      $(".form-control").each(function() {
+        if ($(this).val() === "") {
+          isValid = false;
+        }
+      })
+      $(".dropdown-toggle").each(function() {
+        if ($(this).text() === "Select an option ") {
+          isValid = false;
+        }
+      })
+      return isValid;
+    };
+
+    if (validateForm() == true) {
 
       var newFriend = {
         name: $("#name").val().trim(),
@@ -200,7 +252,12 @@
         $("#resultsModal").modal("toggle");
         console.log(data);
       });
-    });
+    } else {
+      $("#matchName").text("Please fill out all fields and answer all questions!");
+      $("#warningModal").modal("toggle");
+    }
+    return false;
+  });
 
   </script>
 </body>

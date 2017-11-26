@@ -3,8 +3,9 @@ var friends = require("../data/friends.js").Freunden;
 var app = express();
 var bodyParser = require("body-parser");
 var fs = require("fs");
+var path = require("path");
 
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 module.exports = function(app) {
@@ -49,6 +50,12 @@ module.exports = function(app) {
       var BFFimg = friends[match].photo;
       console.log(`${BFF} is your match!`);
       res.json(friends[match]);
+    })
+
+    // 404 error page
+    app.use(function (req, res, next) {
+      res.status(404);
+      res.sendFile(path.join(__dirname + "/../public/error.html"));
     })
   };
 
