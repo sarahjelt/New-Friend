@@ -1,0 +1,40 @@
+body {
+  background-color: #a3a3c2;
+}
+
+h2 {
+  color: #333;
+}
+
+a {
+  color: white;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #737373;
+}
+
+a:visited {
+  color: #e6e6e6;
+}
+
+a.btn {
+  color: #333;
+}
+
+#submit-button {
+  background-color: #adebeb;
+  border-color: #adebeb;
+  color: #333;
+}
+
+#matchImg {
+  max-height: 75%;
+  max-width: 75%;
+}
+
+.btn-lg {
+  background-color: #adebeb;
+  color: #333;
+}

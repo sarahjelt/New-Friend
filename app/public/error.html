@@ -1,45 +1,48 @@
 <!DOCTYPE html>
+<html lang="en-us">
 <head>
   <meta charset="UTF-8">
-  <title>Friend Finder</title>
+  <title>404</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style type="text/css">
 
-    body {
-      background-color: #a3a3c2;
-    }
+  body {
+    background-color: white;
+  }
 
-    h2 {
-      color: #e0e0eb;
-    }
+  a {
+    color: #ff8533;
+    cursor: pointer;
+  }
 
-    a {
-      color: white;
-      cursor: pointer;
-    }
+  a#hov:hover {
+    color: #ff9900;
+    text-decoration: none;
+  }
 
-    #submit-button {
-      background-color: #adebeb;
-      border-color: #adebeb;
-      color: #333;
-    }
+  a:visited {
+    color: #595959;
+  }
 
-    #matchImg {
-      max-height: 75%;
-      max-width: 75%;
-    }
+  p {
+    font-size: 16px;
+  }
+
+  .nvsble {
+    background-color: white;
+  }
 
   </style>
 </head>
 
 <body>
   <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron nvsble">
       <h1>Oops! This page doesn't exist!</h1>
     </div>
-    <p><a href="/">Home</a> | <a href="/api/friends">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
+    <p><a id="hov" href="/">Home</a> | <a id="hov" href="/api/friends">API Friends List</a> | <a id="hov" href="http://github.com/sarahjelt/friend-finder">GitHub Repo</a></p>
   </div>
 </body>
 </html>

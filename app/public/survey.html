@@ -1,42 +1,77 @@
 <!DOCTYPE html>
+<html lang="en-us">
 <head>
   <meta charset="UTF-8">
-  <title>Friend Finder</title>
+  <title>New Friend – Survey</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style type="text/css">
 
-    body {
-      background-color: #a3a3c2;
-    }
+  body {
+    background-color: white;
+  }
 
-    h2 {
-      color: #e0e0eb;
-    }
+  h1 {
+    color: #ff8533;
+    text-align: center;
+    font-size: 48px;
+    padding-bottom: 12px;
+  }
 
-    a {
-      color: white;
-      cursor: pointer;
-    }
+  h3 {
+    color: #ff8533;
+  }
 
-    #submit-button {
-      background-color: #adebeb;
-      border-color: #adebeb;
-      color: #333;
-    }
+  hr {
+    border-color: #ff8533;
+  }
 
-    #matchImg {
-      max-height: 75%;
-      max-width: 75%;
-    }
+  a {
+    color: #ff8533;
+    cursor: pointer;
+  }
+
+  a#hov:hover {
+    color: #ff9900;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: #595959;
+  }
+
+  a.btn {
+    color: #333;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  #submit-button {
+    background-color: #ff8533;
+    border-color: #ff8533;
+    color: white;
+  }
+
+  #matchImg {
+    max-height: 75%;
+    max-width: 75%;
+  }
+
+  .btn-lg {
+    background-color: #adebeb;
+    color: #333;
+  }
 
   </style>
 </head>
 
 <body>
   <div class="container">
-    <h2>Survey Questions</h2>
+    <h1>Survey Questions</h1>
+    <p>Make sure to fill in the form fields and answer all questions before submitting your survey!</p>
     <hr>
     <h3>About You</h3>
     <form>
@@ -172,7 +207,7 @@
   <br>
   <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
   <hr>
-  <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="http://github.com/sarahjelt/friend-finder" target="_blank">GitHub Repo</a></p>
+  <p><a id="hov" href="/api/friends" target="_blank">API Friends List</a> | <a id="hov" href="http://github.com/sarahjelt/friend-finder" target="_blank">GitHub Repo</a></p>
   </div>
   <!-- results modal -->
   <div id="resultsModal" class="modal fade" role="dialog" style="display: none;">
@@ -250,7 +285,6 @@
         $("#matchName").text(data.name);
         $("#matchImg").attr("src", data.photo);
         $("#resultsModal").modal("toggle");
-        console.log(data);
       });
     } else {
       $("#matchName").text("Please fill out all fields and answer all questions!");

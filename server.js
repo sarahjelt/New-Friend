@@ -11,12 +11,9 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-var routes = require('./app/routing/htmlRoutes.js')(app);
+// ROUTING FILES
 var api = require('./app/routing/apiRoutes.js')(app);
-
-
-
-//DATA
+var routes = require('./app/routing/htmlRoutes.js')(app);
 
 //SERVER LISTENER
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

@@ -1,5 +1,4 @@
 var express = require("express");
-var fs = require("fs");
 var path = require("path");
 
 var app = express();
@@ -7,17 +6,23 @@ var app = express();
 module.exports = function(app) {
 
   app.get("/", function(req, res) {
-    fs.readFile(__dirname + "/../public/home.html", function(err, data) {
-      res.writeHead(200, {"Content-Type": "text/html"});
-      res.end(data);
-    })
+    res.sendFile(path.join(__dirname + "/../public/home.html"));
   });
 
   app.get("/survey", function(req, res) {
-    fs.readFile(__dirname + "/../public/survey.html", function(err, data) {
-      res.writeHead(200, {"Content-Type": "text/html"});
-      res.end(data);
-    })
+    res.sendFile(path.join(__dirname + "/../public/survey.html"));
   });
+
+  // 404 error page
+  app.use(function (req, res, next) {
+    res.status(404);
+    res.sendFile(path.join(__dirname + "/../public/error.html"));
+  })
+
+  // 500 error
+  app.use(function (err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send("Something went wrong! Please try again!");
+  })
 
 };

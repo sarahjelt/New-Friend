@@ -52,10 +52,5 @@ module.exports = function(app) {
       res.json(friends[match]);
     })
 
-    // 404 error page
-    app.use(function (req, res, next) {
-      res.status(404);
-      res.sendFile(path.join(__dirname + "/../public/error.html"));
-    })
   };
 
