@@ -73,7 +73,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container"> <!-- begin main container div -->
     <h1>Survey Questions</h1>
     <p>Make sure to fill in the form fields and answer all questions before submitting your survey!</p>
     <hr>
@@ -161,7 +161,7 @@
         </ul>
       </div>
     <h3>Question Seven</h3>
-      <h4>Driving a car is a dangerous and frightening prospect.</h4>
+      <h4>It's more about the destination than the journey.</h4>
       <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="q7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" style="width:200px">Select an option <span class="caret"></span></button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -212,7 +212,7 @@
   <button id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block"><span class="glyphicon glyphicon-ok"></span> Submit</button>
   <hr>
   <p><a id="hov" href="/api/friends" target="_blank">API Friends List</a> | <a id="hov" href="http://github.com/sarahjelt/friend-finder" target="_blank">GitHub Repo</a></p>
-  </div>
+  </div> <!-- end main container div -->
   <!-- results modal -->
   <div id="resultsModal" class="modal fade" role="dialog" style="display: none;">
     <div class="modal-dialog">
@@ -277,7 +277,7 @@
     };
 
     if (validateForm() == true) {
-
+      // new friend object created from form data and answer selections
       var newFriend = {
         name: $("#name").val().trim(),
         photo: $("#photo").val().trim(),

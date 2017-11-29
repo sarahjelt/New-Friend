@@ -1,4 +1,4 @@
-//ARRAY OF OBJECTS
+// array of friends
 var Freunden = [
   {
     name: "charlie",
