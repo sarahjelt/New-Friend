@@ -1,4 +1,5 @@
 # New Friend
+
 ***New Friend*** is a personality compatibility application designed to help you find new friends based on your answers to 10 simple survey questions.
 
 ![](../new-friend-home-screen-cap.png?raw=true)
@@ -22,5 +23,3 @@ Click submit at the bottom of the page to see your match!
 The bottom of the home and survey pages contains links to the full friends list API and the Github repo.
 
 Enjoy!
-
-
