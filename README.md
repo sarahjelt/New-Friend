@@ -2,7 +2,7 @@
 
 ***New Friend*** is a personality compatibility application designed to help you find new friends based on your answers to 10 simple survey questions.
 
-![](../new-friend-home-screen-cap.png?raw=true)
+![screenshot of homepage](docs/new-friend-home-screen-cap.png)
 
 ## Step 1
 
@@ -16,7 +16,7 @@ Fill in your name and put a link to a photo of you in the form fields at the top
 
 Click submit at the bottom of the page to see your match!
 
-![screenshot of match modal](../new-friend-screen-cap.png?raw=true)
+![screenshot of match modal](docs/new-friend-screen-cap.png)
 
 ### other info
 
