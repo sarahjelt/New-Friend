@@ -17,9 +17,11 @@ Fill in your name and put a link to a photo of you in the form fields at the top
 Click submit at the bottom of the page to see your match!
 
 ![screenshot of match modal](docs/new-friend-screen-cap.png)
+[charlie image © Bluebush Productions, LLC]
 
 ### other info
 
 The bottom of the home and survey pages contains links to the full friends list API and the Github repo.
 
 Enjoy!
+
